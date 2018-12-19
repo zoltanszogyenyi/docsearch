@@ -463,10 +463,16 @@ DocSearch to index all your content.</p>
 </code></pre>
 <h3 id="user_agent-optional"><code>user_agent</code> <em>Optional</em> <a class="anchor" href="#user_agent-optional" aria-hidden="true"></a></h3>
 <p>You can override the user agent used to crawl your website. By default, this
-value is:
-<code>'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/70.0.3538.110 Safari/537.36'</code></p>
+value is:</p>
+<pre><code class="hljs">Algolia DocSearch Crawler
+</code></pre>
+<p>However, if the crawl of your website requires a browser emulation (i.e.
+<code>js_render=true</code>), our <code>user_agent</code> is:</p>
+<pre><code class="hljs">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/71.0.3578.98 Safari/537.36
+</code></pre>
+<p>To override it, from the configuration:</p>
 <pre><code class="hljs language-json">{
-  <span class="hljs-attr">"user_agent"</span>: <span class="hljs-string">"DocSearch Bot"</span>
+  <span class="hljs-attr">"user_agent"</span>: <span class="hljs-string">"Custom Bot"</span>
 }
 </code></pre>
 <!-- Include the apply form--><div class="my-3 italic"><a href="https://github.com/algolia/docsearch/tree/master/docs/src/config-file.md">Edit this page</a></div></div></div></div></div><script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script><script src="js/main.js"></script><script src="js/docs.js"></script></body><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N8JP8G');</script></head></html>
