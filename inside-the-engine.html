@@ -43,14 +43,14 @@ approach</a>. DocSearch will first search for exact matches in your keywords
 then fallback to partial matches. Those results will then be ordered based, once
 again, on the page hierarchy, as extracted from the <code>selectors</code>.</p>
 <p>The default strategy is to promote records having matching words in the highest
-level fist. Thus if two results have the same matching words, the one having
-them in the highest level (lvl0) will be reanked higher. We also use the
+level first. Thus if two results have the same matching words, the one having
+them in the highest level (lvl0) will be ranked higher. We also use the
 position of the matching words. The sooner they appear within the HTML flow, the
 higher the record will be ranked.</p>
 <p>The relevancy is based on several factors and can be customized according to the
 Algolia tie-breaking method.</p>
-<p>You can boost pages depending ont their URLs. This is done from the <code>start_urls</code>
-and its <code>page_rank</code> attributes. It is a numeric value, default to 0. The higher
+<p>You can boost pages depending on their URLs. This is done from the <code>start_urls</code>
+and its <code>page_rank</code> attributes. It is a numeric value (defaults to 0). The higher
 it is, the higher results from the matching pages will be ranked. For example
 all pages with a <code>page_rank</code> of 5 will be returned before pages with a
 <code>page_rank</code> of 1.</p>
