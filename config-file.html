@@ -231,7 +231,7 @@ record hierarchy. It can contain up to 6 levels (<code>lvl0</code>, <code>lvl1</
 as <code>lvl1</code>, <code>h3</code> as <code>lvl2</code>, and <code>p</code> as <code>text</code>, but this is highly dependent on
 the markup.</p>
 <p>The <code>text</code> key is mandatory, but we highly recommend setting also <code>lvl0</code>, <code>lvl1</code>
-and <code>lvl2</code> to have a decent level of relevance.</p>
+and <code>lvl2</code> to have a decent depth of relevance.</p>
 <pre><code class="hljs language-json">{
   <span class="hljs-attr">"selectors"</span>: {
     <span class="hljs-attr">"lvl0"</span>: <span class="hljs-string">"#content header h1"</span>,
@@ -260,7 +260,7 @@ markup from top to bottom. This works well with semi-structured content, like a
 hierarchy of headers. This breaks when the relevant information is not part of
 the same flow. For example when the title is not part of a header or sidebar.</p>
 <p>For that reason, you can set a selector as global, meaning that it will match on
-the whole page, and will be the same for all records extracted on this page.</p>
+the whole page, and will be the same for all records extracted from this page.</p>
 <pre><code class="hljs language-json">{
   <span class="hljs-attr">"selectors"</span>: {
     <span class="hljs-attr">"lvl0"</span>: {
@@ -272,7 +272,7 @@ the whole page, and will be the same for all records extracted on this page.</p>
 </code></pre>
 <h3 id="setting-a-default-value">Setting a default value <a class="anchor" href="#setting-a-default-value" aria-hidden="true"></a></h3>
 <p>If your selector might not match a valid element on the page, you can define a
-<code>default_value</code> to fallback to.</p>
+<code>default_value</code> as a fallback.</p>
 <pre><code class="hljs language-json">{
   <span class="hljs-attr">"selectors"</span>: {
     <span class="hljs-attr">"lvl0"</span>: {
@@ -452,9 +452,9 @@ website instead.</p>
 }
 </code></pre>
 <h3 id="use_anchors-optional"><code>use_anchors</code> <em>Optional</em> <a class="anchor" href="#use_anchors-optional" aria-hidden="true"></a></h3>
-<p>Websites using client-side rendering often don't use full urls, but instead take
+<p>Websites using client-side rendering often don't use full URLs, but instead take
 advantage of the URL hash (the part after the <code>#</code>).</p>
-<p>If your website is using such urls, you should set <code>use_anchors</code> to <code>true</code> for
+<p>If your website is using such URLs, you should set <code>use_anchors</code> to <code>true</code> for
 DocSearch to index all your content.</p>
 <pre><code class="hljs language-json">{
   <span class="hljs-attr">"js_render"</span>: <span class="hljs-literal">true</span>,
