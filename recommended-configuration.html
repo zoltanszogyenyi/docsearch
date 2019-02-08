@@ -45,12 +45,12 @@ need to <a href="./config-file.html#js_render-optional">set <code>js_render: tru
 <h3 id="recommended-selectors">Recommended <a href="./config-file.html">selectors</a> <a class="anchor" href="#recommended-selectors" aria-hidden="true"></a></h3>
 <p>Your HTML can add some specific static classes with no styling. These classes
 will not impact your content and will help us to create a great discovery
-experience. Impatient to know how?, read the following element.</p>
+experience. Impatient to know how?, follow these points:</p>
 <ul>
 <li>
 <p>Add a static <code>docSearch-content</code> class to the biggest and smaller element
 gathering your documentation. This element is the main container of your
-textual content. It is mostly a main or article element.</p>
+textual content. HTML tag used are often main or article element.</p>
 </li>
 <li>
 <p>Every elements outside this main documentation container (for instance in nav)
@@ -75,15 +75,15 @@ selectors outside this element will be <code>global</code>. Every selectors appe
 same order than their <code>lvl</code> along the HTML flow.</p>
 <h3 id="introduces-global-information-as-meta-tags">Introduces global information as meta tags <a class="anchor" href="#introduces-global-information-as-meta-tags" aria-hidden="true"></a></h3>
 <p>Our crawler automatically extract information from our DocSearch specific meta
-taf:</p>
+tags:</p>
 <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"docsearch:language"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"en"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"docsearch:version"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"1.0.0"</span>&gt;</span>
 </code></pre>
-<p>The <code>content</code> value of the meta will be added to every records extracted from
-the page. Given that the name is <code>docsearch:$NAME</code>, <code>$NAME</code> will be set as a
-attribute in each of them. Its value will be its related <code>content</code> value. You
-can then transform them as <a href="https://www.algolia.com/doc/guides/searching/filtering/#facet-filters"><code>facetFilters</code></a> to filter over them. We will need
-to use Algolia settings via the DocSearch <code>custom_settings</code> parameter and set
+<p>The <code>content</code> value of the meta is added to every records extracted from the
+page. Given that the name is <code>docsearch:$NAME</code>, <code>$NAME</code> is set as an attribute
+to every records while its value is the related <code>content</code> value. You can then
+transform them as <a href="https://www.algolia.com/doc/guides/searching/filtering/#facet-filters"><code>facetFilters</code></a> to filter over them. We will need to use
+Algolia settings via the DocSearch <code>custom_settings</code> parameter and set
 <code>attributesForFaceting</code> Algolia parameter.</p>
 <p>Look at this example with our vuepress integration:</p>
 <pre><code class="hljs language-json"><span class="hljs-string">"custom_settings"</span>: {
