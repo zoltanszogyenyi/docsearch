@@ -61,8 +61,8 @@ will help us to create a great learn as you type experience from your
 documentation.</p>
 <ul>
 <li>
-<p>Add a static <code>DocSearch-content</code> class to the main container of your textual
-content. It is mostly a main or article HTML element.</p>
+<p>Add a static class <code>DocSearch-content</code> to the main container of your textual
+content. It is mostly a <code>&lt;main/&gt;</code> or an <code>&lt;article/&gt;</code> HTML element.</p>
 </li>
 <li>
 <p>Every searchable <code>lvl</code> elements outside this main documentation container (for
@@ -70,46 +70,44 @@ instance in a sidebar) must be <code>global</code> selectors. They will be globa
 pickup and injected to every records built from your page. Be careful, the
 level's value matter and every matching element must have an increasing level
 along the HTML flow. The level <code>X</code> (for <code>lvlX</code>) should appear after a level
-<code>Y</code> while <code>X&gt;Y</code>. We do not recommend <code>text</code> element to be global.</p>
+<code>Y</code> while <code>X&gt;Y</code>.</p>
 </li>
 <li>
-<p><code>lvlX</code> selectors should use the standard title tags like <code>h1</code>, <code>h2</code>, <code>h3</code> ...
-You can add a class to these elements. Do not forget to set a unique <code>id</code> or
-<code>name</code> attribute to these elements as explain below.</p>
+<p><code>lvlX</code> selectors should use the standard title tags like <code>h1</code>, <code>h2</code>, <code>h3</code>,
+etc. You can also use static class. Set a unique <code>id</code> or <code>name</code> attribute to
+these elements as detailed below.</p>
 </li>
 <li>
-<p>Every <code>lvlx</code> DOM elements (matching the selectors defined in your
-configuration) must have a unique <code>id</code> or <code>name</code>. This will help the
-redirection to directly scroll down to the exact place of the matching
-elements. These attributes defined the right anchor to use.</p>
+<p>Every DOM elements matching the <code>lvlX</code> selectors must have a unique <code>id</code> or
+<code>name</code> attribute. This will help the redirection to directly scroll down to
+the exact place of the matching elements. These attributes defined the right
+anchor to use.</p>
 </li>
 <li>
 <p>Every textual element (selector <code>text</code>) must be wrapped in a tag <code>&lt;p/&gt;</code> or
 <code>&lt;li/&gt;</code>. This content must be atomic and split into small entities. Be careful
-to never nest one of these tags into another one, it will create duplicates.</p>
+to never nest one matching elements into another one, it will create
+duplicates.</p>
 </li>
 <li>
 <p>Stay consistent and do not forget that we need to have some regularity along
-the HTML flow <a href="./assets/proper_layout.png">as presented here</a>.</p>
+the HTML flow <a href="./how-do-we-build-an-index.html">as presented here</a>.</p>
 </li>
 </ul>
 <h2 id="introduces-global-information-as-meta-tags">Introduces global information as meta tags <a class="anchor" href="#introduces-global-information-as-meta-tags" aria-hidden="true"></a></h2>
 <p>Our crawler automatically extract information from our DocSearch specific meta
-tag:</p>
+tags:</p>
 <pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"docsearch:language"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"en"</span> /&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"docsearch:version"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"1.0.0"</span> /&gt;</span>
 </code></pre>
 <p>The <code>content</code> value of the meta will be added to every records extracted from
-the page. Given that the name is <code>DocSearch:$NAME</code>, <code>$NAME</code> will be set as a
-attribute in each of them. Its value will be its related <code>content</code> value. You
-can then transform them as <a href="https://www.algolia.com/doc/guides/searching/filtering/#facet-filters"><code>facetFilters</code></a> to filter over them. We will need
-to use Algolia settings via the DocSearch <code>custom_settings</code> parameter and set
-<code>attributesForFaceting</code> Algolia parameter.</p>
-<p>Look at this example with our vuepress integration:</p>
+the page. Given that the name is <code>DocSearch:$NAME</code>, <code>$NAME</code> will be set as an
+attribute in every records. Its value will be its related <code>content</code> value. You
+can then transform these attributes as <a href="https://www.algolia.com/doc/guides/searching/filtering/#facet-filters"><code>facetFilters</code></a> to filter over them
+from the UI. We will need to set <code>attributesForFaceting</code> of your Algolia index
+exposed via the DocSearch <code>custom_settings</code> parameter.</p>
 <pre><code class="hljs language-json"><span class="hljs-string">"custom_settings"</span>: {
-    <span class="hljs-attr">"attributesForFaceting"</span>: [
-      <span class="hljs-string">"lang"</span>
-    ]
+    <span class="hljs-attr">"attributesForFaceting"</span>: [<span class="hljs-string">"language"</span>, <span class="hljs-string">"version"</span>]
   }
 </code></pre>
 <h2 id="nice-to-have">Nice to have <a class="anchor" href="#nice-to-have" aria-hidden="true"></a></h2>
