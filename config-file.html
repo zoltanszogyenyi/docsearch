@@ -353,12 +353,16 @@ records, but want to keep the content different across pages.</p>
 }
 </code></pre>
 <h3 id="nb_hits-special"><code>nb_hits</code> <em>Special</em> <a class="anchor" href="#nb_hits-special" aria-hidden="true"></a></h3>
-<p><code>nb_hits</code> automatically updated by DocSearch every time it runs your config. It
-is set to the number of records that were extracted and indexed. We check this
+<p>The number of records that were extracted and index by DocSearch. We check this
 key internally to keep track of any unintended spike or drop that could reveal a
 misconfiguration.</p>
-<p>You don't have to touch it, we're documenting it here in case you were wondering
-what this was about.</p>
+<p><code>nb_hits</code> is updated automatically each time you run DocSearch on your config.
+If the term is a tty, DocSearch will prompt you before updating the field. To
+avoid being prompted, set the <code>UPDATE_NB_HITS</code> environment variable to <code>true</code>
+(to enable) or <code>false</code> (to disable). This variable can be set in the .env file
+alongside <code>APPLICATION_ID</code> and <code>API_KEY</code>.</p>
+<p>You don't have to modify this field. We're documenting it here in case you were
+wondering what it's all about.</p>
 <h3 id="only_content_level-optional"><code>only_content_level</code> <em>Optional</em> <a class="anchor" href="#only_content_level-optional" aria-hidden="true"></a></h3>
 <p>When <code>only_content_level</code> is set to <code>true</code>, then the crawler won't create
 records for the <code>lvlX</code> selectors.</p>
