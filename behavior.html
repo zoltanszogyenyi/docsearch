@@ -94,13 +94,13 @@ do anything by default, but we provide this hook for you to add your own logic.<
 <h2 id="autocompleteoptions"><code>autocompleteOptions</code> <a class="anchor" href="#autocompleteoptions" aria-hidden="true"></a></h2>
 <p>You can pass any options to the underlying <code>autocomplete.js</code> instance by using
 the <code>autocompleteOptions</code> parameter. You will find the list of all available
-values in <a href="https://github.com/algolia/autocomplete.js#options">the official documentation</a>.</p>
+values in <a href="https://github.com/algolia/autocomplete.js#global-options">the official documentation</a>.</p>
 <p>You can also listen to <code>autocomplete</code> events through the <code>.autocomplete</code>
 property of the <code>docsearch</code> instance.</p>
 <pre><code class="hljs language-javascript"><span class="hljs-keyword">const</span> search = docsearch({
   […]
   autocompleteOptions: {
-    <span class="hljs-comment">// See https://github.com/algolia/autocomplete.js#options</span>
+    <span class="hljs-comment">// See https://github.com/algolia/autocomplete.js#global-options</span>
   }
 });
 
