@@ -38,6 +38,13 @@ name you'd like.</p>
   <span class="hljs-attr">"index_name"</span>: <span class="hljs-string">"example"</span>
 }
 </code></pre>
+<p>When DocSearch runs, it writes records to a temporary index. Once scraping is
+complete, it moves that index to the name specified by <code>index_name</code> (replacing
+the existing index).</p>
+<p>By default, the name of the temporary index is the value of <code>index_name</code> +
+<em>_tmp</em>. If you want to use a different name, set the <code>INDEX_NAME_TMP</code>
+environment variable to a different value. This variable can be set in the .env
+file alongside <code>APPLICATION_ID</code> and <code>API_KEY</code>.</p>
 <h2 id="start_urls"><code>start_urls</code> <a class="anchor" href="#start_urls" aria-hidden="true"></a></h2>
 <p>This array contains the list of URLs that will be used to start crawling your
 website. The crawler will recursively follow any links (<code>&lt;a/&gt;</code> tags) from those
