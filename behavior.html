@@ -56,20 +56,20 @@ into one dataset at a time. You can ignore this attribute.</p>
 </li>
 </ul>
 <pre><code class="hljs language-javascript">docsearch({
-  […],
-  <span class="hljs-attr">handleSelected</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">input, event, suggestion, datasetNumber, context</span>) </span>{
-    <span class="hljs-comment">// Do nothing if click on the suggestion, as it's already a &lt;a href&gt;, the</span>
-    <span class="hljs-comment">// browser will take care of it. This allow Ctrl-Clicking on results and not</span>
-    <span class="hljs-comment">// having the main window being redirected as well</span>
+  <span class="hljs-comment">// ...</span>
+  handleSelected: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">input, event, suggestion, datasetNumber, context</span>) </span>{
+    <span class="hljs-comment">// Prevents the default behavior on click and rather open the suggestion</span>
+    <span class="hljs-comment">// in a new tab.</span>
     <span class="hljs-keyword">if</span> (context.selectionMethod === <span class="hljs-string">'click'</span>) {
-      <span class="hljs-keyword">return</span>;
-    }
+      input.setVal(<span class="hljs-string">''</span>);
 
-    input.setVal(<span class="hljs-string">''</span>);
-    <span class="hljs-built_in">window</span>.location.assign(suggestion.url);
-  }
+      <span class="hljs-keyword">const</span> windowReference = <span class="hljs-built_in">window</span>.open(suggestion.url, <span class="hljs-string">'_blank'</span>);
+      windowReference.focus();
+    }
+  },
 });
 </code></pre>
+<p>You can <a href="https://codesandbox.io/s/docsearchjs-open-in-new-tab-tgs2h">try it live on CodeSandbox</a>.</p>
 <h2 id="queryhook"><code>queryHook</code> <a class="anchor" href="#queryhook" aria-hidden="true"></a></h2>
 <p>This method is called on every keystroke to transform the typed keywords before
 querying Algolia. By default, it does not do anything, but we provide this hook
