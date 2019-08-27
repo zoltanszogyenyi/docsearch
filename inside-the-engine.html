@@ -18,12 +18,12 @@ your config. It will read those pages and recursively extract and follow every
 link in those pages until it has browsed every compliant page.</p>
 <p>If you have explicitly defined a <code>sitemap.xml</code>, our crawler will scrape every
 provided and compliant page. We do recommend using <a href="https://www.sitemaps.org/">a sitemap</a> since it
-clearly exposes URLs to crawl and avoid missing pages that aren't linked from
+explicitly exposes URLs to crawl and avoid missing pages that aren't linked from
 another one.</p>
 <h2 id="extracting-content">Extracting content <a class="anchor" href="#extracting-content" aria-hidden="true"></a></h2>
 <p>Building records using the scraper is pretty intuitive. According to your
 settings, we extract the payload of your web page and index it, preserving your
-data's structure. This is achieved in a simple way:</p>
+data's structure. It achieves this in a simple way:</p>
 <ul>
 <li>We <strong>read top down</strong> your web page following your HTML flow and pick out your
 matching elements according to their <strong>levels</strong> based on the <code>selectors_level</code>
@@ -40,20 +40,20 @@ isn't flushed.</em></p>
 <h2 id="ranking-records">Ranking records <a class="anchor" href="#ranking-records" aria-hidden="true"></a></h2>
 <p>Algolia always returns the most relevant results first, using a <a href="https://www.algolia.com/doc/guides/ranking/ranking-formula/#tie-breaking-approach">tie-breaking
 approach</a>. DocSearch will first search for exact matches in your keywords
-then fallback to partial matches. Those results will then be ordered based, once
-again, on the page hierarchy, as extracted from the <code>selectors</code>.</p>
+then fallback to partial matches. It sorts those results, once again, on the
+page hierarchy, as extracted from the <code>selectors</code>.</p>
 <p>The default strategy is to promote records having matching words in the highest
 level first. Thus if two results have the same matching words, the one having
 them in the highest level (lvl0) will be ranked higher. We also use the position
 of the matching words. The sooner they appear within the HTML flow, the higher
 the record will be ranked.</p>
-<p>The relevancy is based on several factors and can be customized according to the
-Algolia tie-breaking method.</p>
-<p>You can boost pages depending on their URLs. This is done from the <code>start_urls</code>
-and its <code>page_rank</code> attributes. It is a numeric value (defaults to 0). The
-higher it is, the higher results from the matching pages will be ranked. For
-example all pages with a <code>page_rank</code> of 5 will be returned before pages with a
-<code>page_rank</code> of 1.</p>
+<p>We base relevancy on several factors and customize it according to the Algolia
+tie-breaking method.</p>
+<p>You can boost pages depending on their URLs. You should use the <code>start_urls</code> and
+its <code>page_rank</code> attributes. Its value is a numeric value (defaults to 0). The
+higher the value is, the higher results from the matching pages will be ranked.
+For example all pages with a <code>page_rank</code> of 5 will be returned before pages with
+a <code>page_rank</code> of 1.</p>
 <p>You could even change the relevancy strategy by <a href="https://www.algolia.com/doc/guides/ranking/custom-ranking/">overwriting the default
 <code>customRanking</code></a> used by the index by using the <code>custom_settings</code> option of
 your config.</p>

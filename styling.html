@@ -14,7 +14,7 @@
 <h2 id="colorscheme">Colorscheme <a class="anchor" href="#colorscheme" aria-hidden="true"></a></h2>
 <p><img src="./assets/default-colorscheme.png" alt="Default colorscheme"></p>
 <p>This theme works well with most websites, but we encourage you to style it to
-your own theme. This can be achieved by overriding the CSS classes used by the
+your own theme. You can achieved it by overriding the CSS classes used by the
 default theme.</p>
 <p>The following annotated example will help you style each part:</p>
 <pre><code class="hljs language-css"><span class="hljs-comment">/* Main dropdown wrapper */</span>
@@ -68,18 +68,18 @@ yourself</a>, you don't have to keep the logo.</p>
 });
 </code></pre>
 <h2 id="other-considerations">Other considerations <a class="anchor" href="#other-considerations" aria-hidden="true"></a></h2>
-<p>Selected suggestions are wrapped in a <code>.ds-cursor</code> class. This means that you
-can use <code>.ds-cursor .algolia-docsearch-suggestion--content</code> to style the
-selected suggestion for example.</p>
-<p>On small screens, DocSearch reverts to a single column layout, while the
-two-column layout shown in the screenshot is used on larger screens. You can add
-media queries (for example <code>@media (min-width: 768px) {}</code>) to target different
+<p>It wraps selected suggestions in a <code>.ds-cursor</code> class. This means that you can
+use <code>.ds-cursor .algolia-docsearch-suggestion--content</code> to style the selected
+suggestion for example.</p>
+<p>On small screens, DocSearch reverts to a single column layout, while is uses the
+two-column layout shown in the screenshot on larger screens. You can add media
+queries (for example <code>@media (min-width: 768px) {}</code>) to target different
 displays.</p>
 <h2 id="advanced-styling">Advanced styling <a class="anchor" href="#advanced-styling" aria-hidden="true"></a></h2>
 <p>Whether you would like to do more heavy styling, feel free to have a look at the
 <a href="https://github.com/algolia/docsearch/tree/master/src/styles">SCSS source code</a>. <code>_variables.scss</code> contains all the default theming,
 sizing and breakpoints.</p>
 <p>You can generate your own CSS file by cloning the repository and running
-<code>yarn run build:css</code>. The resulting file will be generated in <code>./dist/cdn</code>, and
-should be used instead of the default one.</p>
+<code>yarn run build:css</code>. It generates the resulting file in <code>./dist/cdn</code>, and you
+should use them instead of the default one.</p>
 <!-- Include the apply form--><div class="my-3 italic"><a href="https://github.com/algolia/docsearch/tree/master/docs/src/styling.md">Edit this page</a></div></div></div></div></div><script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script><script src="js/main.js"></script><script src="js/docs.js"></script></body><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N8JP8G');</script></head></html>

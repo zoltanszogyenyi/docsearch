@@ -12,7 +12,7 @@
 </svg>
 </a></div><div class="md_hidden flex justify-start items-center mx-2"><button class="custom-toggle-nav text-solstice items-center hover_text-grey-darker focus_outline-none"><svg class="align-text-bottom navigation-open h-1x w-1x fill-current" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg><svg class="align-text-bottom navigation-close hidden h-1x w-1x fill-current" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"></path></svg></button></div></div></div><div class="mt-3"><div class="bgtb-moon-white-pure relative"><div class="md_flex max-w-lg m-auto"><div class="navigation-sidebar sticky pin-t top-3 h-100vh-3 overflow-y-auto hidden md_block bg-white pl-1"><!-- Adding subsections from markdown--><div class="pt-2 w-5 m-auto sm_flex sm_w-90 md_block md_w-100"><div class="flcnw flspa sm_flex-auto sm_w-33 sm_p-1 md_w-100 md_p-0"><div class="category text-nebula poppins uppercase mb-05x text-1x">Getting Started</div><ul class="list-reset mb-2"><li><a class="block py-0x text-solstice" href="what-is-docsearch.html">What is DocSearch?</a></li><li><a class="block py-0x current-page text-nebula" href="how-does-it-work.html">How Does It Work?</a><ul class="list-reset pl-1 text-1"><li><a class="block py-0x text-telluric" href="how-does-it-work.html#you-apply">You apply </a></li><li><a class="block py-0x text-telluric" href="how-does-it-work.html#we-create-a-configuration">We create a configuration </a></li><li><a class="block py-0x text-telluric" href="how-does-it-work.html#you-update-your-website">You update your website </a></li></ul></li><li><a class="block py-0x text-solstice" href="who-can-apply.html">Who Can Apply?</a></li><li><a class="block py-0x text-solstice" href="apply.html">Apply Now!</a></li></ul></div><div class="flcnw flspa sm_flex-auto sm_w-33 sm_p-1 md_w-100 md_p-0"><div class="category text-nebula poppins uppercase mb-05x text-1x">Adding DocSearch To Your UI</div><ul class="list-reset mb-2"><li><a class="block py-0x text-solstice" href="dropdown.html">Dropdown UI Overview</a></li><li><a class="block py-0x text-solstice" href="styling.html">Styling</a></li><li><a class="block py-0x text-solstice" href="behavior.html">Behavior</a></li></ul></div><div class="flcnw flspa sm_flex-auto sm_w-33 sm_p-1 md_w-100 md_p-0"><div class="category text-nebula poppins uppercase mb-05x text-1x">Requirements, Tips, FAQ</div><ul class="list-reset mb-2"><li><a class="block py-0x text-solstice" href="required-configuration.html">Required configuration</a></li><li><a class="block py-0x text-solstice" href="tips.html">Tips</a></li><li><a class="block py-0x text-solstice" href="faq.html">FAQ</a></li><li><a class="block py-0x text-solstice" href="integrations.html">Website Generators</a></li></ul></div><div class="flcnw flspa sm_flex-auto sm_w-33 sm_p-1 md_w-100 md_p-0"><div class="category text-nebula poppins uppercase mb-05x text-1x">Let’s Get Technical</div><ul class="list-reset mb-2"><li><a class="block py-0x text-solstice" href="scraper-overview.html">DocSearch Technical Overview (the Scraper)</a></li><li><a class="block py-0x text-solstice" href="inside-the-engine.html">Inside The Engine</a></li><li><a class="block py-0x text-solstice" href="config-file.html">Config Files</a></li><li><a class="block py-0x text-solstice" href="css-helper.html">CSS Helper</a></li><li><a class="block py-0x text-solstice" href="how-do-we-build-an-index.html">Build An Index</a></li><li><a class="block py-0x text-solstice" href="run-your-own.html">Run Your Own</a></li></ul></div></div></div><div class="documentation-content text-2 pt-2 pb-1 px-2 w_100 md_w-75"><div class="md_hidden mb-1"><a href="https://community.algolia.com/docsearch">DocSearch</a><span>&nbsp;>&nbsp;</span><a href="https://community.algolia.com/docsearch/what-is-docsearch.html">Documentation</a></div><h1 class="custom-main-title text-5 lg_text-7 uppercase tracking-poppins text-solstice bold mb-2">How does it work?</h1><p>Getting up and ready with DocSearch is a straightforward process that requires
 three steps: you apply, we configure the crawler for you, and you integrate our
-Search-UI in your frontend. It is as simple as copying and pasting a JavaScript
+Search-UI in your frontend. You only need to copy and paste a JavaScript
 snippet.</p>
 <p class="mt-2"><img src="./assets/docsearch-how-it-works.png" alt="How it works"></p>
 <h2 id="you-apply">You apply <a class="anchor" href="#you-apply" aria-hidden="true"></a></h2>
@@ -24,21 +24,21 @@ applications, please give us a couple of days to get back to you :)</p>
 <h2 id="we-create-a-configuration">We create a configuration <a class="anchor" href="#we-create-a-configuration" aria-hidden="true"></a></h2>
 <p>Once we receive <a href="./apply.html">your application</a>, we'll have a look at your website and
 create a custom configuration file for it. This file defines which URLs we
-should crawl or ignore, as well as the specific CSS selectors to be used for
+should crawl or ignore, as well as the specific CSS selectors to use for
 selecting headers, subheaders, etc. All configs are publicly available in our
 <a href="https://github.com/algolia/docsearch-configs/tree/master/configs">config repository</a>.</p>
 <p>This step still requires some manual work and human brain, but thanks to the +1
 000 configs we already created, we're able to automate most of it. Once this
-creation is done, we'll run a first indexing of your website and have it run
+creation finishes, we'll run a first indexing of your website and have it run
 automatically every 24h.</p>
 <h2 id="you-update-your-website">You update your website <a class="anchor" href="#you-update-your-website" aria-hidden="true"></a></h2>
 <p>We'll then get back to you with the JavaScript snippet you'll need to add to
 your website. This will bind your search <code>input</code> field to display results from
 your Algolia index on each keystroke in a dropdown menu.</p>
-<p>The default styling of the dropdown uses a grey theme to fit in most designs.
-The dropdown itself is made of HTML with custom CSS classes and we recommend
-that <a href="./styling.html">you overwrite those classes</a> to provide a theming more inline with the
-rest of your website.</p>
+<p>The default styling of the dropdown uses a grey theme to fit in most designs. We
+have made the dropdown itself with HTML using custom CSS classes and we
+recommend that <a href="./styling.html">you overwrite those classes</a> to provide a theming more inline
+with the rest of your website.</p>
 <p>Now that DocSearch is set, you don't have anything else to do. We'll keep
 crawling your website every day and update your search results automatically.
 All we ask is that you keep the &quot;search by Algolia&quot; logo next to your search

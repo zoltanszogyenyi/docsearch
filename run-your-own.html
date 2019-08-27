@@ -26,8 +26,8 @@ variables. If you don't have an Algolia account, you need to <a href="https://ww
 </li>
 <li>
 <p><code>API_KEY</code> set to your API Key. Make sure to use an API key with <strong>write</strong>
-access to your index. <a href="https://www.algolia.com/doc/guides/security/api-keys/#acl">The ACL <code>addObject</code>, <code>editSettings</code> and
-<code>deleteIndex</code></a> must be allowed to this key.</p>
+access to your index. It needs <a href="https://www.algolia.com/doc/guides/security/api-keys/#acl">the ACL <code>addObject</code>, <code>editSettings</code> and
+<code>deleteIndex</code></a>.</p>
 </li>
 </ul>
 <p>For convenience, you can create a <code>.env</code> file in the repository root.</p>
@@ -37,11 +37,11 @@ API_KEY=YOUR_API_KEY
 <h2 id="run-the-crawl-from-the-docker-image">Run the crawl from the Docker image <a class="anchor" href="#run-the-crawl-from-the-docker-image" aria-hidden="true"></a></h2>
 <p>You can run a crawl from the packaged Docker image to crawl your website. You
 will need to <a href="https://github.com/stedolan/jq/wiki/Installation">install jq, a lightweight command-line JSON processor</a></p>
-<p>Then you only need to start the crawl according to your configuration. You
-should check the <a href="./config-file.html">dedicated configuration documentation</a>.</p>
+<p>Then you need to start the crawl according to your configuration. You should
+check the <a href="./config-file.html">dedicated configuration documentation</a>.</p>
 <pre><code class="hljs language-sh">docker run -it --env-file=.env -e <span class="hljs-string">"CONFIG=<span class="hljs-variable">$(cat /path/to/your/config.json | jq -r tostring)</span>"</span> algolia/docsearch-scraper
 </code></pre>
-<p>Once the crawl is done, you can <a href="#integration">jump to the Integration step</a>.</p>
+<p>Once the scraping finishes, you can <a href="#integration">jump to the Integration step</a>.</p>
 <h2 id="running-the-crawler-from-the-code-base">Running the crawler from the code base <a class="anchor" href="#running-the-crawler-from-the-code-base" aria-hidden="true"></a></h2>
 <h3 id="installation">Installation <a class="anchor" href="#installation" aria-hidden="true"></a></h3>
 <p>The scraper is a python tool <a href="https://scrapy.org/">based on scrapy</a>. We do recommend to use
