@@ -40,7 +40,7 @@ index. The selectors in your config define the data on file,</p>
 <p>As the website owner, we also give you access to the Algolia Analytics
 dashboard. This will let you have more data about the anonymized searches in
 your website. You'll see the most searched terms, or those with no results.</p>
-<p>With such Analytics, you will understand better what your users are doing.</p>
+<p>With such Analytics, you will better understand what your users are doing.</p>
 <p><em>If you don't have Analytics access, <a href="mailto:docsearch@algolia.com">send us an email</a> and we'll enable it.</em></p>
 <h2 id="where-is-my-data-hosted">Where is my data hosted? <a class="anchor" href="#where-is-my-data-hosted" aria-hidden="true"></a></h2>
 <p>We host the DocSearch data in Algolia's servers, with replications around the
@@ -64,13 +64,11 @@ using the <code>selectors_exclude</code> option in your config), and instead str
 content so the method names are actual headers.</p>
 <h2 id="why-do-i-have-duplicate-content-in-my-results">Why do I have duplicate content in my results? <a class="anchor" href="#why-do-i-have-duplicate-content-in-my-results" aria-hidden="true"></a></h2>
 <p>This can happen when you have more than one URL pointing to the same content,
-for example with <code>./docs</code>, <code>./docs/</code> and <code>./docs/index.html</code> or even both <code>http</code>
-and <code>https</code> in place.</p>
-<p>You can fix the <code>stop_urls</code> to all the patterns you want to exclude. The
-following example will exclude all URLs ending with <code>/</code> or <code>index.html</code> as well
-as those starting with <code>http://</code>.</p>
+for example with <code>./docs</code>, <code>./docs/</code> and <code>./docs/index.html</code>.</p>
+<p>You set the <code>stop_urls</code> to all the patterns you want to exclude. The following
+example will exclude all URLs ending with <code>/</code> or <code>index.html</code></p>
 <pre><code class="hljs language-json">{
-  <span class="hljs-attr">"stop_urls"</span>: [<span class="hljs-string">"/$"</span>, <span class="hljs-string">"/index.html$"</span>, <span class="hljs-string">"^http://"</span>]
+  <span class="hljs-attr">"stop_urls"</span>: [<span class="hljs-string">"/$"</span>, <span class="hljs-string">"/index.html$"</span>]
 }
 </code></pre>
 <h2 id="why-are-the-custom-changes-from-the-algolia-dashboard-ineffective">Why are the custom changes from the Algolia dashboard ineffective? <a class="anchor" href="#why-are-the-custom-changes-from-the-algolia-dashboard-ineffective" aria-hidden="true"></a></h2>
@@ -92,7 +90,7 @@ records the crawl has extracted and indexed by the last DocSearch run. It
 updates this number automatically.</p>
 <p>The DocSearch scraper follows <a href="https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/in-depth/asynchronicity-and-when-to-wait-for-tasks/#atomic-reindexing">the recommended atomic-reindexing strategy</a>.
 It creates a brand new temporary index to populate the data scraped from your
-website. When successful, the crawl overwites the old index defined in your
+website. When successful, the crawl overwrite the old index defined in your
 configuration with the key <code>index_name</code>.</p>
 <h2 id="why-arent-my-pages-indexed">Why aren't my pages indexed? <a class="anchor" href="#why-arent-my-pages-indexed" aria-hidden="true"></a></h2>
 <p>We are scraping your website according to your configuration. It might happen
@@ -100,14 +98,14 @@ that some pages are missing from the search. The possible reasons for that are:<
 <ul>
 <li>Makes sure you are not filtering on the search by wrongly using
 <code>facetFilters</code>. <a href="https://www.algolia.com/doc/api-reference/api-parameters/facetFilters/">See here for more details</a>.</li>
-<li>Make sure that an other indexed page references the page missing thanks
-to a hyperlink tag <code>&lt;a/&gt;</code>.</li>
+<li>Make sure that an other indexed page references the page missing thanks to a
+hyperlink tag <code>&lt;a/&gt;</code>.</li>
 <li>Make sure you are <a href="./tips.html#use-a-sitemapxml">providing a compliant sitemap from the configuration</a>
 and that it references the page.</li>
 </ul>
 <h2 id="can-i-know-when-the-next-crawl-will-happen">Can I know when the next crawl will happen? <a class="anchor" href="#can-i-know-when-the-next-crawl-will-happen" aria-hidden="true"></a></h2>
 <p>No you can't. You should be aware that we made every crawls in a day. The
-position of your crawl in the queue is the inverse of the lexicographic order of
+position of your crawl in the queue is the lexicographic order of
 your <code>index_name</code> amongs the whole list of featured website.</p>
-<p>If none of the previous points help, you can contact our support.</p>
+<p>If none of the previous points help, you <a href="mailto:docsearch@algolia.com">can contact our support</a>.</p>
 <!-- Include the apply form--><div class="my-3 italic"><a href="https://github.com/algolia/docsearch/tree/master/docs/src/faq.md">Edit this page</a></div></div></div></div></div><script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script><script src="js/main.js"></script><script src="js/docs.js"></script></body><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N8JP8G');</script></head></html>
