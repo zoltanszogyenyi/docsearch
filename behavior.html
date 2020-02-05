@@ -57,7 +57,7 @@ into one dataset at a time. You can ignore this attribute.</p>
 </ul>
 <pre><code class="hljs language-javascript">docsearch({
   <span class="hljs-comment">// ...</span>
-  handleSelected: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">input, event, suggestion, datasetNumber, context</span>) </span>{
+  <span class="hljs-attr">handleSelected</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">input, event, suggestion, datasetNumber, context</span>) </span>{
     <span class="hljs-comment">// Prevents the default behavior on click and rather open the suggestion</span>
     <span class="hljs-comment">// in a new tab.</span>
     <span class="hljs-keyword">if</span> (context.selectionMethod === <span class="hljs-string">'click'</span>) {
@@ -100,7 +100,7 @@ values in <a href="https://github.com/algolia/autocomplete.js#global-options">th
 property of the <code>docsearch</code> instance.</p>
 <pre><code class="hljs language-javascript"><span class="hljs-keyword">const</span> search = docsearch({
   […]
-  autocompleteOptions: {
+  <span class="hljs-attr">autocompleteOptions</span>: {
     <span class="hljs-comment">// See https://github.com/algolia/autocomplete.js#global-options</span>
   }
 });
