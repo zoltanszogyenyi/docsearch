@@ -178,7 +178,7 @@ You can now use them to [filter your search in the frontend][16]
 
 _[`pageRank`](#pagerank) used to be an **integer**, it is now a **string**_
 
-This parameter allow you to boost records built from the current `pathsToMatch`. Pages with highest [`pageRank`](#pagerank) will be returned before pages with a lower [`pageRank`](#pagerank). Note that you can pass any numeric value **as a string**, including negative values:
+This parameter allows you to boost records built from the current `pathsToMatch`. Pages with highest [`pageRank`](#pagerank) will be returned before pages with a lower [`pageRank`](#pagerank). Note that you can pass any numeric value **as a string**, including negative values:
 
 ```js
 {
